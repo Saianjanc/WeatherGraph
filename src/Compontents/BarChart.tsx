@@ -1,13 +1,13 @@
 import { Axis, Grid, BarSeries, XYChart } from '@visx/xychart';
 
 interface Datum {
-    x: string;
-    y: number;
+    main: {temp: number};
+    dt_txt: string;
   }
   
   const accessors = {
-    xAccessor: (d: Datum) => d.x,
-    yAccessor: (d: Datum) => d.y,
+    xAccessor: (d: Datum) => d.dt_txt,
+    yAccessor: (d: Datum) => d.main.temp,
   };
   
   export default function BarChart({data1}:{data1:Datum[]}) {
@@ -25,7 +25,7 @@ interface Datum {
           orientation="right"
           hideAxisLine
           numTicks={5}
-          tickFormat={(value) => value*100+'°C'}
+          tickFormat={(value) => value +'°C'}
         />
       </XYChart>
     );
