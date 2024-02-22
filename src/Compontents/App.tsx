@@ -4,7 +4,7 @@ import { getData } from "../utils/weatherApi";
 
 function App(){
   const [todayData,setTodayData] = useState<any>()
-  async function data(){const data = await getData("london");const newData = data.map((ele:any)=>{ele.dt_txt=ele.dt_txt[12]+ele.dt_txt[13]+ele.dt_txt[14]+ele.dt_txt[15]});setTodayData(data)}
+  async function data(){const data = await getData("london");data.map((ele:any)=>{ele.dt_txt=ele.dt_txt[12]+ele.dt_txt[13]+ele.dt_txt[14]+ele.dt_txt[15]});setTodayData(data)}
   useEffect(()=>{data()},[])
   console.log(todayData);
   
