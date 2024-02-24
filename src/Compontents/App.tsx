@@ -7,6 +7,7 @@ function App(){
   async function data(){const data = await getData("bangalore");data.map((ele:any)=>{ele.dt_txt=ele.dt_txt[12]+ele.dt_txt[13]+ele.dt_txt[14]+ele.dt_txt[15];ele.main.temp=ele.main.temp-273.15});setTodayData(data)}
   useEffect(()=>{data()},[])
   
+  // const todayData = [
   //   { x: '1am', y: 0.2 },
   //   { x: '2am', y: 0.28 },
   //   { x: '3am', y: 0.33 },
