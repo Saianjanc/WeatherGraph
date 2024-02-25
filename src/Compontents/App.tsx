@@ -4,9 +4,8 @@ import { getData } from "../utils/weatherApi";
 
 function App(){
   const [todayData,setTodayData] = useState<any>()
-  async function data(){const data = await getData("bangalore");data.map((ele:any)=>{ele.dt_txt=ele.dt_txt[12]+ele.dt_txt[13]+ele.dt_txt[14]+ele.dt_txt[15];ele.main.temp=ele.main.temp-273.15});setTodayData(data)}
+  async function data(){const data = await getData("bangalore");data.map((ele:any)=>{ele.dt_txt=ele.dt_txt[11]+ele.dt_txt[12]+ele.dt_txt[13]+ele.dt_txt[14]+ele.dt_txt[15];ele.main.temp=ele.main.temp-273.15});setTodayData(data)}
   useEffect(()=>{data()},[])
-  
   return (
     <div className="flex flex-col items-center">
     {todayData?<>
